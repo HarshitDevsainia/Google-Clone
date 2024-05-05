@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { HomeHeader } from "./Components/HomeHeader";
 
 export default function Home() {
   return (
     <>
-      <h1>Hii Harshit Google App</h1>
+      <HomeHeader/>
     </>
   );
 }
