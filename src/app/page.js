@@ -1,6 +1,6 @@
 import Image from "next/image";
-import HomeHeader from "./Components/HomeHeader";
-import HomeSearch from './Components/HomeSearch'
+import HomeHeader from "../Components/HomeHeader";
+import HomeSearch from '../Components/HomeSearch'
  
 export default function Home() {
   return (
