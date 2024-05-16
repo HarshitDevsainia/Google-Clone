@@ -4,15 +4,16 @@ import Link from 'next/link';
 import { RiSettings3Line } from "react-icons/ri";
 import { TbGridDots } from "react-icons/tb";
 import SearchBox from "../Components/SearchBox"
+import SearchHeaderOptions from './SearchHeaderOptions';
 
-export default function SearchHeader() {
+export default function SearchHeader() {  
   return (
     <header className='sticky top-0 bg-white'>
       <div className="flex items-center justify-between w-full p-6">
           <Link href={'/'}>
             <Image
               src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png'
-              alt='Google-logo'
+              alt='Google logo'
               width={120}
               height={40}
               priority
@@ -31,6 +32,7 @@ export default function SearchHeader() {
             className='px-6 ml-2 py-2 bg-blue-500 rounded-md text-white font-medium hover:brightness-100 hover:shadow-md transition-shadow'
           >Signin</button>
       </div>
+      <SearchHeaderOptions/>
     </header>
   )
 }

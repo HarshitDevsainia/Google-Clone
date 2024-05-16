@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { RxCross2 } from "react-icons/rx";
 import { BsFillMicFill } from "react-icons/bs";
 import {AiOutlineSearch} from 'react-icons/ai';
@@ -13,7 +13,6 @@ export default function SearchBox() {
   const handleSubmit=(e)=>{
     e.preventDefault();
     if(!term.trim()){
-      setTerm('');
       return;
     }
     route.push(`/Search/web?searchTerm=${term}`);
