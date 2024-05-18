@@ -12,5 +12,5 @@ export default function Error({error,reset}) {
             Try Again
         </button>
     </div>
-  )
+  );
 }

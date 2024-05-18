@@ -1,11 +1,14 @@
 import Link from 'next/link';
+import WebSearchResult from '@/Components/WebSearchResult';
 export default async function WebSearchPage({searchParams}) {
   const res=await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&:q=${searchParams.searchTerm}`);
+  console.log(res.ok);
   if(!res.ok){
-    throw new Error('Something Wrong');
+    throw new Error('Something went Wrong');
   }
   const data=await res.json();
   const result=data.items;
+  console.log(result);
   if(!result){
     return(
       <div className="flex flex-col items-center justify-center mt-20 space-y-2">
@@ -18,6 +21,6 @@ export default async function WebSearchPage({searchParams}) {
     )
   }
   return (
-    <div>WebSearchPage</div>
+    <div>{result && <WebSearchResult result={data}/>}</div>
   )
 }
