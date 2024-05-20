@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Pagination from "./Pagination";
 export default function WebSearchResult({result}) {
     console.log(result);
     return(
-        <div className="w-full mx-auto sm:pl-[5%] md:pl-[14%] lg:pl-52 px-3 pb-24">
+        <div className="w-full sm:pb-24 mx-auto sm:pl-[5%] md:pl-[14%] lg:pl-52 px-3 pb-40">
             <p className="text-gray-600 text-sm mb-5 mt-3">
                 About {result.searchInformation && result.searchInformation.formattedTotalResults} Result {result.searchInformation && result.searchInformation.formattedSearchTime} seconds
             </p>
@@ -17,6 +18,7 @@ export default function WebSearchResult({result}) {
                   </div>
                </div>
             ))}
+            <Pagination/>
         </div>
     )
 }

@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { startTransition } from 'react'
 import Link from 'next/link';
 import ImageSearchResult from '@/Components/ImageSearchResult';
 
 export default async function ImageSearchPage({searchParams}) {
-  const res=await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&:q=${searchParams.searchTerm}&searchType=image`);
+  const startIndex=searchParams.start||'1';
+  await new Promise((resolve)=>setTimeout(resolve,1000));
+  const res=await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}&searchType=image&start=${startIndex}`);
+  
   const data=await res.json();
   const result=data.items;
-  console.log(result);
   if(!res.ok){
     throw new Error('Somthing went Wrong');
   }

@@ -1,4 +1,5 @@
 'use client'
+import Pagination from "@/Components/Pagination";
 import { useEffect } from "react";
 
 export default function Error({error,reset}) {
